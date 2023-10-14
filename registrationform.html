@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+</head>
+<body>
+    <h1>Registration Form</h1>
+    <p>Please fill out this form with the required information</p>
+    <form method="post" action="https://register-demo.freecodecamp.org">
+    <!--method attribute specifies how to send form/data to the URl in action; via GET or via POST-->
+    <fieldset>
+        <!--with form subs, it's good practice to provide each submittable element with a name, to identify the element in the form submission-->
+        <label for="first-name">Enter your first name: <input name="first-name" type="text" id="first-name" required /></label> 
+        <label for="last-name">Enter your last name: <input name="last-name" type="text" id="last-name" required /></label> 
+        <label for="email">Enter your email: <input name="email" type="email" id="email" required /></label>
+        <label for="password">Create a new password: <input name="password" type="password" id="password" required pattern="[a-z0-5]{8,}" /></label>
+    </fieldset>
+    <fieldset>
+        <label for="personal-account"><input class="inline" type="radio" name="account-type" id="personal-account"/> Personal Account</label>
+        <label for="business-account"><input class="inline" type="radio" name="account-type" id="business-account"/> Business Account</label>
+        <label for="terms-and-conditions"><input class="inline" name="terms" type="checkbox" required id="terms-and-conditions" /> I accept the <a href="https://www.freecodecamps.org/news/terms-of-service/"> terms and conditions</a></label>
+    </fieldset>
+    <fieldset>
+        <label for="profile-picture">Upload a profile picture: <input name="picture" id="profile-picture" type="file" /></label>
+        <label for="age">Input your age (years): <input name="age" id="age" type="number" min="13" max="120" /></label>
+        <!--Adding a dropdown to the form is easy with the select element: container for a
+        group of option elements, and the option element acts as a label for each dropdown
+        option. Both elements require closing tags.-->
+        <label for="referrer">How did you hear about us?
+            <select name="referrer" id="referrer">
+             <option value="">(select one)</option>
+             <option value="1">News</option>
+             <option value="2">YouTube</option>
+             <option value="3">Podcast</option>
+             <option value="4">Other</option>
+            <!--options need to be given a value attribute without which the text won't be submitted to the server-->
+            </select>
+        </label>
+        <label for="bio">Provide a bio: <textarea name="bio" id="bio" rows="3" cols="30" placeholder="I like coding next to my girlfriend Emma..."></textarea></label>
+        <!--textarea elements act like an input element of type text with the benefit of being able to receive multi-
+        line text, and an initial number of text rows and columns.-->
+    </fieldset>
+    <input type="submit" value="Submit"/>
+  </form>
+</body>
+</html>
